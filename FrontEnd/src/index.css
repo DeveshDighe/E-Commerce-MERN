@@ -80,11 +80,11 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
-html{
+html {
   height: 100%;
 }
 
-body{
+body {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -104,6 +104,7 @@ body{
   align-items: center;
 
 }
+
 .a>div>div>div>ul>li>div {
   display: flex;
   justify-content: space-between;
@@ -113,20 +114,34 @@ body{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.shadowcss{
+.shadowcss {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
 .footerCss {
   margin-top: 300px;
+}
+.changeBTN{
+  background-color: red;
 }
 
 @media screen and (min-width: 870px) {
 
-  .a>div>div>div>ul{
+  .a>div>div>div>ul {
     gap: 40px;
   }
+
   /* CSS rules for screens with a maximum width of 'value' */
 }
+
+@media (min-width: 549px) {
+
+  .changeBTN {
+    display: none;
+  }
+
+}
+
 /* 
 .alice-carousel__stage-item __active __target{
   border: 10px salmon;

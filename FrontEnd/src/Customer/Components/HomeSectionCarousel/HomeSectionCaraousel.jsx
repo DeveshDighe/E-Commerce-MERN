@@ -5,6 +5,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import { Button } from '@mui/material';
 import { mens_kurta } from '../../../../Data/Men/men_kurta';
 
+
 const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
     const responsive = {
         0: { items: 1.1 },
@@ -20,7 +21,7 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
     // Check if the screen width matches any of the breakpoints in the responsive object
     // Adjust skip accordingly
     if (screenWidth >= 280 && screenWidth < 400) {
-        skip = 70;
+        skip = 90;
     }
     else if (screenWidth >= 400 && screenWidth < 429) {
         skip = 4
@@ -115,11 +116,34 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
                 // controlsStrategy="alternate"
                 />
 
-                {ActiveIndex !== items.length - skip && <Button variant='contained' className=' z-50' onClick={slideNext} sx={{ position: "absolute", top: '8rem', right: '0rem', transform: 'translateX(50%) rotate(90deg)', bgcolor: "white" }} aria-label='next' >
-                    <KeyboardArrowLeftIcon style={{ transform: 'rotate(90deg)', color: 'black' }} />
-                </Button>}
+                {ActiveIndex !== items.length - skip && (
+                    <Button
+                        variant='contained'
+                        className='z-50 block'
+                        onClick={slideNext}
+                        sx={{
+                            position: "absolute",
+                            top: '8rem',
+                            right: '0rem',
+                            transform: 'translateX(50%) rotate(90deg)',
+                            bgcolor: "white",
+                            '@media (max-width: 350px)': {
+                                display: 'none'
+                            }
+                        }}
+                        aria-label='next'
+                    >
+                        <KeyboardArrowLeftIcon style={{ transform: 'rotate(90deg)', color: 'black' }} />
+                    </Button>
+                )}
 
-                {ActiveIndex !== 0 && <Button onClick={slidePrev} variant='contained' className=' z-50' sx={{ position: "absolute", top: '8rem', left: '0rem', transform: 'translateX(-50%) rotate(90deg)', bgcolor: "white" }} aria-label='next' >
+
+                {ActiveIndex !== 0 && <Button onClick={slidePrev} variant='contained' className=' z-50 changeBTN' sx={{
+                    position: "absolute", top: '8rem', left: '0rem', transform: 'translateX(-50%) rotate(90deg)', bgcolor: "white",
+                    '@media (max-width: 350px)': {
+                        display: 'none'
+                    }
+                }} aria-label='next' >
                     <KeyboardArrowLeftIcon style={{ transform: 'rotate(-90deg)', color: 'black' }} />
                 </Button>}
             </div>

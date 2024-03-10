@@ -512,7 +512,7 @@ export default function Product() {
 
 
 
-                <section className=' mt-32 w-full px-[3.6rem]'>
+                <section className=' mt-32 w-full max-sm:px-0 px-[3.6rem]'>
                   <div className=' justify-center flex'>
                     <Pagination page={currentPage} count={product.products?.totalPages} color="primary" sx={{
                       '& .MuiPaginationItem-root.Mui-selected': {
