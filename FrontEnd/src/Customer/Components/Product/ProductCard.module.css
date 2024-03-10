@@ -1,0 +1,40 @@
+.ProductCard:hover {
+    /* scale: 1.01; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.OrderShadow:hover {
+    /* scale: 1.01; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.ProductCard {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 1px;
+    border-radius: 5px;
+    margin-left: -100px;
+}
+.OrderShadow {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.ProductCard img {
+    border-radius: 5px;
+}
+
+.ProductCard:hover img {
+    transition: all ease-in-out 0.1s;
+    transform: scaleY(1.01);
+
+}
+
+.filter {
+    height: 1000px; /* Set a minimum height */
+    position: sticky;
+    top: 2rem;
+    width: 230px;
+}
+
+
+.margin{
+    /* margin-left: -60px; */
+}

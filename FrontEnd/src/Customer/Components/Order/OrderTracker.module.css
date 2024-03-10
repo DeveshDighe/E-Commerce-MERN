@@ -1,0 +1,17 @@
+.stepLabel {
+  font-size: 24px; /* Default font size */
+}
+
+@media (max-width: 600px) {
+  .stepLabel {
+      font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .stepLabel {
+      font-size: 20px; /* Adjust font size for medium screens */
+  }
+}
+
+/* Add more media queries for larger screens if needed */
