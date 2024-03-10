@@ -4,22 +4,25 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { removeCartItem, updateCartItem } from '../../../State/Cart/Action';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const CartItem = ({ data ,setplus }) => {
+const CartItem = ({ data, setplus }) => {
     const dispatch = useDispatch();
+    console.log(data, 'llll');
+    const navigate = useNavigate()
 
     const handleUpdateCartItem = (num) => {
-        const productData = {data:{quantity:data.quantity + num}, cartItemId: data?._id}
+        const productData = { data: { quantity: data.quantity + num }, cartItemId: data?._id }
         dispatch(updateCartItem(productData))
     }
-    
+
     const handleRemoveCartProduct = () => {
         dispatch(removeCartItem(data?._id))
         setplus(prevPlus => prevPlus + 1);
     }
-    
+
     return (
-        <div className=' p-5 shadow-lg border rounded-md my-4'>
+        <div className=' cursor-pointer p-5 shadow-lg border rounded-md my-4' onClick={()=>navigate(`/product/${data.product._id}`)}>
 
             <div className=' flex items-center'>
 
@@ -40,12 +43,12 @@ const CartItem = ({ data ,setplus }) => {
             </div>
             <div className=' lg:flex items-center lg:space-x-10 pt-4'>
                 <div className=' flex items-center space-x-2'>
-                    <IconButton onClick={()=>handleUpdateCartItem(-1)} disabled={data?.quantity <= 1} >
+                    <IconButton onClick={() => handleUpdateCartItem(-1)} disabled={data?.quantity <= 1} >
                         <RemoveCircleOutlineIcon />
                     </IconButton>
 
                     <span className=' py-1 px-7 border rounded-sm'>{data?.quantity}</span>
-                    <IconButton onClick={()=>handleUpdateCartItem(1)} sx={{ color: 'RGB(145 85 253)' }}>
+                    <IconButton onClick={() => handleUpdateCartItem(1)} sx={{ color: 'RGB(145 85 253)' }}>
                         <AddCircleOutlineIcon />
                     </IconButton>
 

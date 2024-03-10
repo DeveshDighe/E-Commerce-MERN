@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const API_BASE_URL = 'http://localhost:8000/';
+export const API_BASE_URL = 'https://e-commerce-mern-project-apis.onrender.com/';
+// export const API_BASE_URL = 'http://localhost:8000/';
 
 const jwt = localStorage.getItem('JwT');
 

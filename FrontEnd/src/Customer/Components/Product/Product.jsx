@@ -13,6 +13,8 @@ import SortIcon from '@mui/icons-material/Sort';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { findProducts } from '../../../State/Product/Action'
+import FadeLoader from 'react-spinners/FadeLoader'
+import NoFilterProduct from './NoFilterProduct'
 
 const sortOptions = [
   { name: 'Low To High', value: 'price_low_to_high', href: '#', section: 'sort', current: false },
@@ -27,12 +29,21 @@ function classNames(...classes) {
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1);
+  const [loader, setloader] = useState(true)
 
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
   const param = useParams()
   const product = useSelector(store => store.product)
+  console.log(product, 'pdpsldflsfplsfplsdflsdlfspfpsd');
+
+  useEffect(() => {
+    setTimeout(() => {
+          setloader(false);       
+    }, 4000);
+  }, [loader])
+
 
 
 
@@ -475,9 +486,30 @@ export default function Product() {
               {/* Product grid */}
               <div className={`${style.margin} lg:col-span-4 w-full`}>
 
-                <div className=' flex flex-wrap justify-center bg-white py-5 gap-2 ml-5 max-sm:-ml-0'>
-                  {product.products && product?.products?.content?.map((item) => <ProductCard key={item._id} Product={item} />)}
+                <div className='flex flex-wrap justify-center bg-white py-5 gap-2 ml-5 max-sm:-ml-0'>
+                  {product.products && product.products.content && product.products.content.length > 0 ? (
+                    // Render product cards if content is not empty
+                    product.products.content.map((item) => <ProductCard key={item._id} Product={item} />)
+                  ) : (
+                    // Render loading spinner if content is empty or not yet available
+                    <div className=' h-[600px] flex justify-center items-center'>
+                      {loader ?
+                        <FadeLoader
+                          color="RGB(150 146 238)"
+                          loading={true}
+                          speedMultiplier={2}
+                          // cssOverride={override}
+                          size={15}
+                          aria-label="Loading Spinner"
+                          data-testid="loader"
+                        />
+                        :
+                        <NoFilterProduct />
+                      }
+                    </div>
+                  )}
                 </div>
+
 
 
                 <section className=' mt-32 w-full px-[3.6rem]'>

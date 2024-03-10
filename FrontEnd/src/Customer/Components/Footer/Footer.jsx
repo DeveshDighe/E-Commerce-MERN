@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
 
     const handleSmoothScroll = (id) => {
-        setOpen(false)
+        console.log(id);
         if (id === '/') {
             return navigate('/')
         }
@@ -24,11 +24,11 @@ const Footer = () => {
                 ] */}
                 <nav className="flex justify-center flex-wrap gap-6 text-gray-100 font-medium">
                     <a className="hover:text-gray-500" href="/">Home</a>
-                    <a className="hover:text-gray-500" href="#Prod">Products</a>
-                    <a className="hover:text-gray-500" href="#">Services</a>
-                    <a className="hover:text-gray-500" href="#">Media</a>
-                    <a className="hover:text-gray-500" href="#">Gallery</a>
-                    <a className="hover:text-gray-500" href="#">Contact</a>
+                    <a className="hover:text-gray-500" onClick={()=>handleSmoothScroll('Prod')}>Products</a>
+                    <a className="hover:text-gray-500">Services</a>
+                    <a className="hover:text-gray-500">Media</a>
+                    <a className="hover:text-gray-500">Gallery</a>
+                    <a className="hover:text-gray-500">Contact</a>
                 </nav>
 
                 <div className="flex justify-center space-x-5">
@@ -36,14 +36,14 @@ const Footer = () => {
                         <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
                     </a>
                     <a href="https://www.instagram.com/im___deveshhh?igsh=MTMwHR2Ym01NXhmaA==" target="_blank" rel="noopener noreferrer">
-                        <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png"  />
+                        <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
                     </a>
                     <a href="https://github.com/DeveshDighe" target="_blank" rel="noopener noreferrer">
                         <img src="https://img.icons8.com/fluent/30/000000/github.png" />
                     </a>
                     <a href="https://twitter.com/devesh_dighe" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.icons8.com/fluent/30/000000/twitter.png" alt="Twitter" />
-</a>
+                        <img src="https://img.icons8.com/fluent/30/000000/twitter.png" alt="Twitter" />
+                    </a>
 
 
                 </div>

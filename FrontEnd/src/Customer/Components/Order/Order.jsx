@@ -16,6 +16,7 @@ const Order = () => {
 
     const dispatch = useDispatch()
     const allOrderHistory = useSelector(store => store.order)
+    
 
 
 
@@ -40,7 +41,7 @@ const Order = () => {
 
                             {orderStatus.map((option) => (
 
-                                <div className=' flex items-center '>
+                                <div key={option.value} className=' flex items-center '>
                                     <input disabled defaultValue={option.value} type="checkbox" className=' cursor-not-allowed h-4 w-4 border-gray-300 text-indigo-600  focus:ring-indigo-500' />
                                     <label className=' ml-3 line text-sm cursor-not-allowed text-gray-600' htmlFor={option.value}>
                                         {option.label}

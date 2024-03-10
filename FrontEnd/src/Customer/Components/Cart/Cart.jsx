@@ -52,7 +52,7 @@ const Cart = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className='col-span-2'>
+                    <div className='col-span-2 md:h-80'>
                         <NothingToShow key="nothingToShow" />
                     </div>
                 )}

@@ -293,7 +293,7 @@ export default function Navigation() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Your Company</span>
                   <IconButton style={{ color: 'rgb(79, 70, 229)' }}>
                     <Bolt fontSize="large" />
@@ -408,7 +408,7 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
 
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className=" lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <UserDropDown openAuthModel={openAuthModel} setopenAuthModel={setopenAuthModel} handleOpen={handleOpen} />
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                 </div>
