@@ -1,7 +1,7 @@
 
 import { Grid, TextField, Button } from '@mui/material'
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom'
 import { getUser, login } from '../../State/Auth/Action';
 
@@ -25,7 +25,19 @@ const MobileLoginForm = () => {
     }
     dispatch(login(userData))
 
+
   }
+
+  const user = useSelector(state => state.auth.user)
+
+
+  useEffect(() => {
+    if (user !== null) {
+      navigate('/')
+    }
+
+
+  }, [user])
 
   // useEffect(() => {
   //   console.log(location.pathname, 'pathname');
