@@ -33,6 +33,7 @@ import { addItemToCart } from '../../../State/Cart/Action.js'
 import RatingComponent from '../ReviewAndRating/Rating.jsx'
 import ProductReviewDummy from './ProductReviewDummy.jsx'
 import FadeLoader from 'react-spinners/FadeLoader.js'
+import toast from 'react-hot-toast'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -97,6 +98,7 @@ export default function ProductDetails() {
     const ProductsData = useSelector(state => state.product)
 
     const user = useSelector(state => state.auth.user)
+    console.log(user , 'user');
 
     const dispatch = useDispatch()
 
@@ -107,10 +109,15 @@ export default function ProductDetails() {
 
 
     const handleAddToCart = () => {
-        const data = { productId, size: selectedSize.name }
+        if (user == null) {
+            toast.error('Please login')
+        }else{
+            const data = { productId, size: selectedSize.name }
         dispatch(addItemToCart(data))
         window.scrollTo(0, 0);
         navigate(`/cart`)
+        }
+        
     }
 
     useEffect(() => {
