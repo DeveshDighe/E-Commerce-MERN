@@ -259,7 +259,7 @@ export default function Navigation() {
 
                     <div className="flow-root">
                       <Button onClick={() => navigate('/loginn')} sx={{ color: 'black', fontWeight: "500" }} className="-m-2 block p-2 font-medium text-gray-900">
-                        Sign in
+                        login
                       </Button>
                     </div>
 

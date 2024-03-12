@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useNavigate } from 'react-router-dom'
@@ -16,6 +16,7 @@ export default function UserDropDown({ handleOpen, setopenAuthModel, openAuthMod
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const auth = useSelector(store => store.auth);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
     if (openAuthModel == false && (location.pathname == '/login' || location.pathname == '/register')) {
@@ -25,7 +26,7 @@ export default function UserDropDown({ handleOpen, setopenAuthModel, openAuthMod
         if (auth.user == null) {
             toast.error('Login First')
         }
-        else{
+        else {
             navigate('/userProfile')
         }
 
@@ -72,18 +73,17 @@ export default function UserDropDown({ handleOpen, setopenAuthModel, openAuthMod
                             )}
                         </Menu.Item>
                         {auth.user != null && auth.user.role == 'ADMIN' &&
-                        <Menu.Item>
-                            {({ active }) => (
-                                <button onClick={() => navigate(`addProduct`)} className={classNames(active ? 'bg-gray-100 text-gray-900 w-full flex' : 'text-gray-700', 'block px-4 py-2 text-sm w-full flex')}>
-                                    <span className=' items-start'>Add Product</span>
-                                </button>
-                            )}
-                        </Menu.Item>
+                            <Menu.Item>
+                                {({ active }) => (
+                                    <button onClick={() => navigate(`addProduct`)} className={classNames(active ? 'bg-gray-100 text-gray-900 w-full flex' : 'text-gray-700', 'block px-4 py-2 text-sm w-full flex')}>
+                                        <span className=' items-start'>Add Product</span>
+                                    </button>
+                                )}
+                            </Menu.Item>
                         }
                         <Menu.Item>
                             {({ active }) => (
-
-                                (auth.user ?
+                                auth.user ?
                                     <button onClick={() => dispatch(logout())}
                                         className={classNames(
                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -93,13 +93,25 @@ export default function UserDropDown({ handleOpen, setopenAuthModel, openAuthMod
                                         Logout
                                     </button>
                                     :
-                                    <button onClick={() => { handleOpen, setopenAuthModel(true); navigate('/login') }}
-                                        className={classNames(
+                                    (windowWidth > 550 ?
+                                        <button onClick={() => { handleOpen, setopenAuthModel(true); navigate('/login') }}
+                                            className={classNames(
+                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                'block w-full px-4 py-2 text-left text-sm'
+                                            )}
+                                        >
+                                            Login
+                                        </button>
+                                        :
+                                        <button onClick={() => navigate('/loginn')} className={classNames(
                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                             'block w-full px-4 py-2 text-left text-sm'
-                                        )}>Login</button>
-                                )
+                                        )}>
+                                            Login
+                                        </button>
+                                    )
                             )}
+
                         </Menu.Item>
                     </div>
                 </Menu.Items>
