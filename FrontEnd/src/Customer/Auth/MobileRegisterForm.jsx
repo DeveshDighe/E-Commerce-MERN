@@ -40,7 +40,7 @@ const MobileRegisterForm = () => {
 
 
   return (
-    <div className=' flex justify-center' >
+    <div className=' flex justify-center mt-4' >
       <form className=' w-[95%]' onSubmit={handleSubmit}>
         <Grid container spacing={3} >
           <Grid item xs={12} sm={6}>
