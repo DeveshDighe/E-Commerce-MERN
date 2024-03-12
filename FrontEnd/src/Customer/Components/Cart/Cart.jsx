@@ -16,6 +16,8 @@ const Cart = () => {
     const [plus, setplus] = useState(1)
     // const {cart2} = useSelector(store => store)
 
+    console.log(cart, 'cart');
+
 
 
     const handleCheckOut = () => {
@@ -27,9 +29,9 @@ const Cart = () => {
         }
     }
 
-    useEffect(() => {
-        dispatch(getCart())
-    }, [plus])
+    // useEffect(() => {
+    //     dispatch(getCart())
+    // }, [plus])
 
     useEffect(()=>{
         dispatch(getCart())

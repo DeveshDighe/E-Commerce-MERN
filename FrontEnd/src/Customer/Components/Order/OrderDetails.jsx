@@ -16,6 +16,12 @@ const OrderDetails = () => {
     const authData = useSelector(store => store.auth)
     const navigate = useNavigate();
 
+    const orderDate = new Date(orderIdData?.order?.orderDate);
+    const plusOneDay = new Date(orderDate); // Create a new Date object
+    plusOneDay.setHours(orderDate.getHours() + 24); // Modify the new Date object
+    const CurrentDate = new Date(Date.now())
+
+
 
     useEffect(() => {
         if (orderId) {
@@ -31,18 +37,18 @@ const OrderDetails = () => {
             </div>
 
             <div className=' py-20'>
-                <OrderTracker activeStep={3} />
+                <OrderTracker activeStep={plusOneDay < CurrentDate ? 6 : 3} />
             </div>
 
             <Grid container className='space-y-5'>
   {orderIdData?.order?.orderItems.length > 0 ? (
-    orderIdData.order.orderItems.map((items) => (
+    orderIdData?.order?.orderItems.map((items) => (
       <Grid
         key={items.product._id}
         onClick={() => navigate(`/Product/${items.product._id}`)}
         item
         container
-        className='shadow-xl rounded-md p-5 border'
+        className='shadow-xl rounded-md p-5 border cursor-pointer'
         sx={{ alignItems: "center", justifyContent: 'space-between' }}
       >
         <Grid item xs={12} md={6}>

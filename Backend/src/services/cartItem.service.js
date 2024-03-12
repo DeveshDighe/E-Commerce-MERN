@@ -40,12 +40,12 @@ const removeCartItem = async (userId, cartItemId) => {
         const cartItem = await findCartItemById(cartItemId)
         const user = await userService.findUserbyId(userId)
 
-    
+
 
         if (user._id.toString() == cartItem.userId.toString()) {
-           await CartItem.findByIdAndDelete(cartItemId)
+            await CartItem.findByIdAndDelete(cartItemId)
 
-           const cart = await Cart.findOne({ user: userId });
+            const cart = await Cart.findOne({ user: userId });
 
             if (!cart) {
                 throw new Error("Cart not found for the user");
@@ -57,7 +57,7 @@ const removeCartItem = async (userId, cartItemId) => {
             // Save the cart
             await cart.save();
 
-            return "Cart item removed successfully";
+            return cart;
         }
         else {
             throw new Error("you cant remove another user's item")

@@ -36,9 +36,9 @@ const findUserCart = async (userId) => {
                 // Iterate through each cart item to calculate totals
                 for (const cartItem of cartItems) {
                     // Calculate total price by multiplying price by quantity
-                    totalPrice += cartItem.price + cartItem.quantity;
+                    totalPrice += cartItem.price 
                     // Calculate total discounted price by multiplying discounted price by quantity
-                    totalDiscountedPrice += cartItem.discountedPrice + cartItem.quantity;
+                    totalDiscountedPrice += cartItem.discountedPrice 
                     // Sum up total quantity
                     totalItem += cartItem.quantity;
                 }

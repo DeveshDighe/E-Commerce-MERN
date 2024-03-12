@@ -17,7 +17,7 @@ import UserProfile from '../Customer/Components/UserProfile/UserProfile.jsx'
 const CustomerRoutes = () => {
     return (
         <div>
-            <div>
+            <div className=' sticky top-0 z-50'>
                 <Navigation />
             </div>
             <Routes>

@@ -51,8 +51,9 @@ export const cartReducer = (state=initialState, action) => {
             return {
                 ...state,
                 cartItems: state.cartItems.filter(
-                    (item) => item._id !== action.payload  //added .id after payload
+                    (item) => item._id !== action.payload.cartItemId  //added .id after payload
                 ),
+                cart : action.payload.data,
                 loading : false,
             }
 

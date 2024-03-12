@@ -36,7 +36,6 @@ export default function Product() {
   const navigate = useNavigate();
   const param = useParams()
   const product = useSelector(store => store.product)
-  console.log(product, 'pdpsldflsfplsfplsdflsdlfspfpsd');
 
   useEffect(() => {
     setTimeout(() => {
@@ -381,7 +380,7 @@ export default function Product() {
             <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-5">
 
               <>
-                <form className={`${style.filter} hidden lg:block `}>
+                <form className={`${style.filter} hidden lg:block`}>
                   <div className=' flex justify-between'>
                     <h1 className=' text-lg opacity-50 font-ubuntu mb-6'>Filters</h1>
                     <SortIcon />

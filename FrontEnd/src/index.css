@@ -121,14 +121,38 @@ body {
 .footerCss {
   margin-top: 300px;
 }
-.changeBTN{
+
+.changeBTN {
   background-color: red;
+}
+
+
+.orderCartFixing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 899px) {
+
+  .orderCartFixing {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .delmadeorder {
+    width: 160px;
+  }
+
+  /* CSS rules for screens with a maximum width of 'value' */
 }
 
 @media screen and (min-width: 870px) {
 
   .a>div>div>div>ul {
-    gap: 40px;
+    gap: 25px;
   }
 
   /* CSS rules for screens with a maximum width of 'value' */
@@ -138,6 +162,19 @@ body {
 
   .changeBTN {
     display: none;
+  }
+
+}
+@media (max-width: 483px) {
+
+  .orderCartFixing {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .delmadeorder {
+    width: 10rem;
   }
 
 }

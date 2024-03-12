@@ -14,20 +14,64 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
         1300: { items: 4 }
     };
 
-    let skip = 12;
+    let skip = 13;
 
     const screenWidth = window.innerWidth;
 
     // Check if the screen width matches any of the breakpoints in the responsive object
     // Adjust skip accordingly
-    if (screenWidth >= 280 && screenWidth < 400) {
+    if (screenWidth >= 280 && screenWidth < 300) {
         skip = 90;
     }
-    else if (screenWidth >= 400 && screenWidth < 429) {
-        skip = 4
+    else if (screenWidth >= 300 && screenWidth < 310) {
+        skip = 1; // or whatever value you want for this range
     }
-    else if (screenWidth >= 429 && screenWidth < 483) {
+    else if (screenWidth >= 310 && screenWidth < 320) {
+        skip = 2; // or whatever value you want for this range
+    }
+    else if (screenWidth >= 320 && screenWidth < 330) {
+        skip = 1100; // or whatever value you want for this range
+    }
+    else if (screenWidth >= 330 && screenWidth < 340) {
+        skip = 1200; // or whatever value you want for this range
+    }
+    else if (screenWidth >= 340 && screenWidth < 350) {
+        skip = 1300; // or whatever value you want for this range
+    }
+    else if (screenWidth >= 350 && screenWidth < 371) {
+        skip = 1200;
+    }
+    else if (screenWidth >= 371 && screenWidth < 380) {
+        skip = 100;
+    }
+    else if (screenWidth >= 380 && screenWidth < 390) {
         skip = 3;
+    }
+    else if (screenWidth >= 390 && screenWidth < 400) {
+        skip = 3;
+    }
+    else if (screenWidth >= 400 && screenWidth < 409) {
+        skip = 4;
+    }
+    // Other conditions...
+
+    // if (screenWidth >= 400 && screenWidth < 408) {
+    //     skip = 200;
+    // }
+    else if (screenWidth >= 409 && screenWidth < 425) {
+        skip = 5
+    }
+    else if (screenWidth >= 425 && screenWidth < 435) {
+        skip = 6
+    }
+    else if (screenWidth >= 435 && screenWidth < 450) {
+        skip = 7;
+    }
+    else if (screenWidth >= 450 && screenWidth < 467) {
+        skip = 8;
+    }
+    else if (screenWidth >= 467 && screenWidth < 483) {
+        skip = 9;
     }
     else if (screenWidth >= 483 && screenWidth < 503) {
         skip = 10;
@@ -62,30 +106,33 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
     else if (screenWidth >= 756 && screenWidth < 818) {
         skip = 9;
     }
-    else if (screenWidth >= 818 && screenWidth < 944) {
+    else if (screenWidth >= 818 && screenWidth < 900) {
         skip = 11;
     }
-    else if (screenWidth >= 944 && screenWidth < 1000) {
+    else if (screenWidth >= 900 && screenWidth < 944) {
         skip = 12;
     }
-    else if (screenWidth >= 1000 && screenWidth < 1059) {
+    else if (screenWidth >= 944 && screenWidth < 1000) {
         skip = 13;
     }
-    else if (screenWidth >= 1059 && screenWidth < 1100) {
+    else if (screenWidth >= 1000 && screenWidth < 1059) {
         skip = 14;
+    }
+    else if (screenWidth >= 1059 && screenWidth < 1100) {
+        skip = 15;
     }
 
     else if (screenWidth >= 1100 && screenWidth < 1200) {
-        skip = 3;
-    }
-    else if (screenWidth >= 1200 && screenWidth < 1373) {
         skip = 5;
     }
-    else if (screenWidth >= 1373 && screenWidth < 1473) {
+    else if (screenWidth >= 1200 && screenWidth < 1373) {
         skip = 7;
     }
+    else if (screenWidth >= 1373 && screenWidth < 1473) {
+        skip = 8
+    }
     else if (screenWidth >= 1473 && screenWidth < 1670) {
-        skip = 9;
+        skip = 10;
     }
 
 
@@ -115,11 +162,11 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
                 // mouseTracking
                 // controlsStrategy="alternate"
                 />
-
+                {/* need to do it dfgdfgdgfdfgdf gfdg dfgdf gdfg dfgdfg dfgdfg dfgdfgdfgdfgdgfdgfgdf*/}
                 {ActiveIndex !== items.length - skip && (
                     <Button
                         variant='contained'
-                        className='z-50 block'
+                        className=' z-10 block'
                         onClick={slideNext}
                         sx={{
                             position: "absolute",
@@ -127,7 +174,7 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
                             right: '0rem',
                             transform: 'translateX(50%) rotate(90deg)',
                             bgcolor: "white",
-                            '@media (max-width: 350px)': {
+                            '@media (max-width: 410px)': {
                                 display: 'none'
                             }
                         }}
@@ -138,9 +185,9 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
                 )}
 
 
-                {ActiveIndex !== 0 && <Button onClick={slidePrev} variant='contained' className=' z-50 changeBTN' sx={{
+                {ActiveIndex !== 0 && <Button onClick={slidePrev} variant='contained' className=' z-10 changeBTN' sx={{
                     position: "absolute", top: '8rem', left: '0rem', transform: 'translateX(-50%) rotate(90deg)', bgcolor: "white",
-                    '@media (max-width: 350px)': {
+                    '@media (max-width: 410px)': {
                         display: 'none'
                     }
                 }} aria-label='next' >

@@ -3,7 +3,6 @@ import React from 'react'
 const Footer = () => {
 
     const handleSmoothScroll = (id) => {
-        console.log(id);
         if (id === '/') {
             return navigate('/')
         }
@@ -14,21 +13,21 @@ const Footer = () => {
         }
     };
     return (
-        <div id='About' className=' h-72 footerCss'>
+        <div id='About' className='footerCss'>
 
-            <footer className="flex h-full flex-col space-y-10 justify-center py-9 bg-gray-900">
+            <footer className="flex h-full flex-col space-y-10 justify-center py-16 bg-gray-900">
                 {/* pages: [
                 {name: 'Home', id: '/', href: '/' },
                 {name: 'Products', id: 'Prod', href: '#Prod' },
                 {name: 'About Me', id: 'About', href: '#About' },
                 ] */}
-                <nav className="flex justify-center flex-wrap gap-6 text-gray-100 font-medium">
-                    <a className="hover:text-gray-500" href="/">Home</a>
-                    <a className="hover:text-gray-500" onClick={()=>handleSmoothScroll('Prod')}>Products</a>
-                    <a className="hover:text-gray-500">Services</a>
-                    <a className="hover:text-gray-500">Media</a>
-                    <a className="hover:text-gray-500">Gallery</a>
-                    <a className="hover:text-gray-500">Contact</a>
+                <nav className="flex justify-center flex-wrap gap-6 text-gray-100 font-medium px-4">
+                    <a className="hover:text-gray-500 cursor-pointer" href="/">Home</a>
+                    <a className="hover:text-gray-500 cursor-pointer" onClick={() => handleSmoothScroll('Prod')}>Products</a>
+                    <a className=" cursor-default">Services</a>
+                    <a className=" cursor-default">Media</a>
+                    <a className=" cursor-default">Gallery</a>
+                    <a className=" cursor-default">Contact</a>
                 </nav>
 
                 <div className="flex justify-center space-x-5">
@@ -47,7 +46,7 @@ const Footer = () => {
 
 
                 </div>
-                <p className="text-center text-gray-400 font-medium">🤍 Thank You For Visiting 🤍</p>
+                <p className="text-center text-gray-400 font-medium cursor-default">🤍 Thank You For Visiting 🤍</p>
             </footer>
         </div>
     )

@@ -39,8 +39,8 @@ const MobileLoginForm = () => {
   //   }
   // }, [jwt, auth.jwt])
   return (
-    <div className=' p-6'>
-      <form onSubmit={handleSubmit}>
+    <div className=' flex justify-center'>
+      <form className=' w-[95%]' onSubmit={handleSubmit}>
         <Grid container spacing={3} >
 
           <Grid item xs={12}>

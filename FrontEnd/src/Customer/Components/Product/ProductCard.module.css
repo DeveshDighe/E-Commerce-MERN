@@ -2,9 +2,11 @@
     /* scale: 1.01; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .OrderShadow:hover {
-    /* scale: 1.01; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    scale: 1.003;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 6px;
+    transition: all linear 0.1s;
 }
 
 .ProductCard {
@@ -13,6 +15,7 @@
     border-radius: 5px;
     margin-left: -100px;
 }
+
 .OrderShadow {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -28,13 +31,14 @@
 }
 
 .filter {
-    height: 1000px; /* Set a minimum height */
+    height: 1100px;
+    /* Set a minimum height */
     position: sticky;
     top: 2rem;
     width: 230px;
 }
 
 
-.margin{
+.margin {
     /* margin-left: -60px; */
 }

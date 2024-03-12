@@ -1,4 +1,5 @@
 const cartItemService = require('../services/cartItem.service.js')
+const cartService = require('../services/cart.service.js')
 
 
 const updateCartItem =async (req,res) =>{
@@ -21,10 +22,9 @@ const removeCartItem =async (req,res) =>{
 
     try {
         const cartItem =await   cartItemService.removeCartItem(user._id, req.params.id )
+        const getCart = await cartService.findUserCart(user._id)
 
-        
-
-        return res.status(200).send({message: 'cartItem removed successfully'})
+        return res.status(200).send(getCart)
     } catch (error) {
         return res.status(500).send({error:error.message})
     }

@@ -3,7 +3,7 @@ import AddressCard from './AddressCard'
 import CartItem from '../Cart/CartItem'
 import { Divider, Button } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { getOrderById } from '../../../State/Order/Action'
 import OrderedCartItem from '../Cart/OrderedCartItem'
 import toast from 'react-hot-toast'
@@ -15,9 +15,11 @@ const OrderSummary = () => {
     const location = useLocation();
     const searchParams =new URLSearchParams(location.search)
     const orderId = searchParams.get('order_id')
+    const navigate = useNavigate();
 
     const handlePay = () => {
-        toast('Payment method yet to implement')
+        toast.success('Order successfull')
+        navigate('/')
     }
 
     useEffect(() => {

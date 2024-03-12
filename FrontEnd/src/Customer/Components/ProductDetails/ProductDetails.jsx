@@ -105,9 +105,11 @@ export default function ProductDetails() {
     const navigate = useNavigate();
     const { productId } = useParams()
 
+
     const handleAddToCart = () => {
         const data = { productId, size: selectedSize.name }
         dispatch(addItemToCart(data))
+        window.scrollTo(0, 0);
         navigate(`/cart`)
     }
 
@@ -186,21 +188,21 @@ export default function ProductDetails() {
                     {/* Image gallery */}
                     <div className=" flex flex-col items-center">
                         <div className="overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
-                            {singleProductData?.imageUrl ?  
-                            <img
-                                src={singleProductData?.imageUrl}
-                                alt={singleProductData?.description}
-                                className="h-full w-full object-cover object-center"
-                            />
-                            : <div className=' h-[400px] flex items-center justify-center'><FadeLoader
-                          color="RGB(150 146 238)"
-                          loading={true}
-                          speedMultiplier={2}
-                          // cssOverride={override}
-                          size={15}
-                          aria-label="Loading Spinner"
-                          data-testid="loader"
-                        /></div>}
+                            {singleProductData?.imageUrl ?
+                                <img
+                                    src={singleProductData?.imageUrl}
+                                    alt={singleProductData?.description}
+                                    className="h-full w-full object-cover object-center"
+                                />
+                                : <div className=' h-[400px] flex items-center justify-center'><FadeLoader
+                                    color="RGB(150 146 238)"
+                                    loading={true}
+                                    speedMultiplier={2}
+                                    // cssOverride={override}
+                                    size={15}
+                                    aria-label="Loading Spinner"
+                                    data-testid="loader"
+                                /></div>}
                         </div>
                         {/* <div className="flex flex-wrap space-x-5 justify-center">
                             {product.images.map((item) => <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">

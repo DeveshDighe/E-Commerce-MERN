@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 const CartItem = ({ data, setplus }) => {
     const dispatch = useDispatch();
-    console.log(data, 'llll');
     const navigate = useNavigate()
 
     const handleUpdateCartItem = (num) => {
@@ -22,9 +21,9 @@ const CartItem = ({ data, setplus }) => {
     }
 
     return (
-        <div className=' cursor-pointer p-5 shadow-lg border rounded-md my-4' onClick={()=>navigate(`/product/${data.product._id}`)}>
+        <div className=' cursor-pointer p-5 shadow-lg border rounded-md my-4' >
 
-            <div className=' flex items-center'>
+            <div className=' flex items-center' onClick={()=>navigate(`/product/${data.product._id}`)}>
 
                 <div className=' w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]'>
                     <img className=' w-full h-full object-cover object-top' src={data?.product?.imageUrl} alt="" />
