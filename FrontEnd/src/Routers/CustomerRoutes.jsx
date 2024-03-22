@@ -16,7 +16,7 @@ import UserProfile from '../Customer/Components/UserProfile/UserProfile.jsx'
 
 const CustomerRoutes = () => {
     return (
-        <div>
+        <div className="min-h-screen flex flex-col">
             <div className=' sticky top-0 z-50'>
                 <Navigation />
             </div>
@@ -39,7 +39,7 @@ const CustomerRoutes = () => {
 
             </Routes>
 
-            <div>
+            <div className="mt-auto">
                 <Footer />
             </div>
         </div>
