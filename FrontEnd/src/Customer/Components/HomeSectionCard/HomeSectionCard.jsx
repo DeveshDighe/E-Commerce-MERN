@@ -17,7 +17,7 @@ const HomeSectionCard = ({Data}) => {
     <div onClick={handleClick}   className=' cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3 hover:scale-105 transition-all duration-300  border border-gray-400'>
 
       <div className=' h-[13rem] w-[10rem]'>
-        <img className=' object-cover object-top w-full h-full' src={Data.imageUrl} alt="" />
+        <img className=' object-cover object-top w-full h-full' loading='lazy' src={Data.imageUrl} alt="" />
       </div>
 
 

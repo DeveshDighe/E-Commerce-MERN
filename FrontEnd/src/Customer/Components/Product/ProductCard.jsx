@@ -17,7 +17,7 @@ const ProductCard = ({Product}) => {
   return (
     <div onClick={handleClick} className={`${style.ProductCard} w-[15rem] m-3 transition-all cursor-pointer`}>
       <div className=' h-[20rem]'>
-          <img className='h-full w-full object-cover object-left-top' src={Product.imageUrl} alt="" />
+          <img loading='lazy' className='h-full w-full object-cover object-left-top' src={Product.imageUrl} alt="" />
       </div>
 
       <div className={`${style.textPart} bg-white p-3`}>

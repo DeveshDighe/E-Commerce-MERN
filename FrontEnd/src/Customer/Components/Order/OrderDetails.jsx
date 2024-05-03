@@ -53,7 +53,7 @@ const OrderDetails = () => {
       >
         <Grid item xs={12} md={6}>
           <div className='flex items-center'>
-            <img className='w-[6rem] h-[7rem] object-cover object-top' src={items.product.imageUrl} alt="" />
+            <img loading='lazy' className='w-[6rem] h-[7rem] object-cover object-top' src={items.product.imageUrl} alt="" />
             <div className='space-y-2 ml-5'>
               <p className='font-semibold'>{items.product.title}</p>
               <p className='space-x-5 opacity-50 text-xs font-semibold'><span>Quantity: {items.quantity}</span> <span>Size: {items.size}</span></p>

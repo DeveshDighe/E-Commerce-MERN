@@ -26,7 +26,7 @@ const OrderedCartItem = ({ data }) => {
             <div className=' flex items-center'>
 
                 <div className=' w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]'>
-                    <img className=' w-full h-full object-cover object-top' src={data?.product?.imageUrl} alt="" />
+                    <img loading='lazy' className=' w-full h-full object-cover object-top' src={data?.product?.imageUrl} alt="" />
                 </div>
 
                 <div className=' ml-5 space-y-1'>

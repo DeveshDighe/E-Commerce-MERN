@@ -35,7 +35,7 @@ const OrderCard = ({ item, everyArr }) => {
 
                 <Grid item xs={12} md={6}>
                     <div className=' flex cursor-pointer'>
-                        <img className=' w-[5rem] h-[5rem] object-cover object-top' src={item.product.imageUrl} alt="" />
+                        <img loading='lazy' className=' w-[5rem] h-[5rem] object-cover object-top' src={item.product.imageUrl} alt="" />
                         <div className=' ml-5  space-y-2'>
 
                             <p className=''>{item.product.brand}</p>
