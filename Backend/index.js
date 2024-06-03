@@ -5,7 +5,18 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+
+const corsOptions = {
+    origin: 'https://e-commerce-mern-project-devesh-dighe.vercel.app', // Allow only this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    optionsSuccessStatus: 200
+};
+
+
+app.use(cors(corsOptions))
+
+
 
 app.get('/', (req, res) => {
     return res.status(200).json({ message: 'welcome to ecommerce api', status: true })
