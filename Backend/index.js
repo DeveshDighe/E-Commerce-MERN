@@ -7,6 +7,14 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://e-commerce-mern-project-devesh-dighe.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    next();
+});
+
+
 app.get('/', (req, res) => {
     return res.status(200).json({ message: 'welcome to ecommerce api', status: true })
 })
