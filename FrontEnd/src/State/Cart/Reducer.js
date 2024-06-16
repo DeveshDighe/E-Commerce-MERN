@@ -16,7 +16,8 @@ export const cartReducer = (state=initialState, action) => {
         case ADD_ITEM_TO_CART_SUCCESS:
             return {
                 ...state,
-                cartItems : [...state.cartItems, action.payload.cartItems],
+                cartItems : action.payload.cartItems,
+                // cartItems : [...state.cartItems, action.payload.cartItems],
                 loading: false,
             }
         
@@ -35,7 +36,7 @@ export const cartReducer = (state=initialState, action) => {
             }
         
         case GET_CART_FAILURE :{
-            return {...state, error:action.payload, loading: false}
+            return {...state, error:action.payload, cartItems : []  , loading: false}
         }
 
         case REMOVE_CART_ITEM_REQUEST:

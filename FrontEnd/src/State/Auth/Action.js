@@ -2,6 +2,7 @@ import axios from "axios"
 import { API_BASE_URL } from "../../config/apiConfig"
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
 import toast from "react-hot-toast"
+import { getCart } from "../Cart/Action"
 
 const token = localStorage.getItem('JwT')
 
@@ -59,6 +60,7 @@ export const login = (userData) => async (dispatch) => {
 
 const getUserRequest = () => ({ type: GET_USER_REQUEST })
 const getUserSuccess = (user) => ({ type: GET_USER_SUCCESS, payload: user })
+
 const getUserFailure = (error) => ({ type: GET_USER_FAILURE, payload: error })
 
 export const getUser = (jwt) => async (dispatch) => {
@@ -77,9 +79,12 @@ export const getUser = (jwt) => async (dispatch) => {
 };
 
 
+// const removeCart = (user) => ({ type: GET_USER_SUCCESS, payload: user })
 
 export const logout = () => (dispatch) => {
     dispatch({ type: LOGOUT, payload: null })
+    dispatch(getCart())
     localStorage.removeItem('JwT')
     toast.success('logout successfull')
+
 }
