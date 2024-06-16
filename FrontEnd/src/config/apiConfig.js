@@ -13,3 +13,11 @@ export const api = axios.create({
         'Content-Type': 'application/json'
     }
 });
+
+api.interceptors.request.use((req)=>{
+    const jwt = localStorage.getItem('JwT');
+
+    req.headers.Authorization = jwt ? `Bearer ${jwt}` : null
+
+    return req
+})
