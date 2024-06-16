@@ -36,7 +36,7 @@ export const cartReducer = (state=initialState, action) => {
             }
         
         case GET_CART_FAILURE :{
-            return {...state, error:action.payload, cartItems : []  , loading: false}
+            return {...state, error:action.payload, cartItems : []  ,cart : null, loading: false}
         }
 
         case REMOVE_CART_ITEM_REQUEST:

@@ -11,7 +11,7 @@ const Cart = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const cart = useSelector(store => store.cart)
+    const cart = useSelector(store => store?.cart)
     const auth = useSelector(store => store.auth)
     const [plus, setplus] = useState(1)
     // const {cart2} = useSelector(store => store)
