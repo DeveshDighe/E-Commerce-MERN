@@ -6,7 +6,7 @@ const app = express()
 
 app.use(express.json())
 const corsOptions = {
-    origin: 'https://e-commerce-mern-project-devesh-dighe.vercel.app', // Explicitly allow your frontend domain
+    origin: 'https://e-commerce-mern-project-devesh-dighe.vercel.app/', // Explicitly allow your frontend domain
     methods: 'GET,POST,PUT,DELETE', // Specify allowed methods as needed
     credentials: true, // If your frontend needs to send cookies or credentials with the request
     allowedHeaders: 'Content-Type,Authorization', // Specify allowed headers
