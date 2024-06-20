@@ -114,6 +114,7 @@ export default function ProductDetails() {
             toast.error('Please login')
         }else{
             const data = { productId, size: selectedSize.name }
+            console.log(data , 'This is data');
         dispatch(addItemToCart(data))
         window.scrollTo(0, 0);
         navigate(`/cart`)
