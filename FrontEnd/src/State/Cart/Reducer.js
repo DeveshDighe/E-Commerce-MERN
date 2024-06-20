@@ -14,10 +14,11 @@ export const cartReducer = (state=initialState, action) => {
             return {...state, loading:true, error:null};
         
         case ADD_ITEM_TO_CART_SUCCESS:
+            console.log('aaaaaa', action.payload.cartItems);
             return {
                 ...state,
-                cartItems : action.payload.cartItems,
-                // cartItems : [...state.cartItems, action.payload.cartItems],
+                // cartItems : action.payload.cartItems,
+                cartItems : [...state.cartItems, action.payload.cartItems],
                 loading: false,
             }
         
@@ -48,6 +49,7 @@ export const cartReducer = (state=initialState, action) => {
             }
         
         case REMOVE_CART_ITEM_SUCCESS:
+
 
             return {
                 ...state,
