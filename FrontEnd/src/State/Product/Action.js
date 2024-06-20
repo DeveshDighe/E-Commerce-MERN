@@ -9,7 +9,7 @@ export const findProducts = (reqData) => async (dispatch) => {
 
     try {
 
-        const { data } = await api.get(`api/products?color=${color}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
+        const { data } = await api.get(`/api/products?color=${color}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`)
 
 
 
@@ -28,7 +28,7 @@ export const findProductsById = (reqData) => async (dispatch) => {
     const productId = reqData;
 
     try {
-        const { data } = await api.get(`api/products/id/${productId}`)
+        const { data } = await api.get(`/api/products/id/${productId}`)
 
         dispatch({ type: FIND_PRODUCT_BY_ID_SUCCESS, payload: data })
     } catch (error) {
@@ -40,7 +40,7 @@ export const addRatingForProduct = (reqData) => async (dispatch) => {
 
     try {
 
-        const { data } = await api.post('api/ratings/create', reqData)
+        const { data } = await api.post('/api/ratings/create', reqData)
 
         dispatch({ type: ADD_RATING, payload: data })
     } catch (error) {
@@ -53,7 +53,7 @@ export const addReviewForProduct = (reqData) => async (dispatch) => {
 
     try {
 
-        const { data } = await api.post('api/reviews/create', reqData)
+        const { data } = await api.post('/api/reviews/create', reqData)
 
         dispatch({ type: ADD_RATING, payload: data })
     } catch (error) {

@@ -29,7 +29,7 @@ export const addItemToCart = (reqData) => async (dispatch) => {
 export const removeCartItem = (cartItemId) => async (dispatch) => {
     dispatch({ type: REMOVE_CART_ITEM_REQUEST })
     try {
-        const { data } = await api.delete(`api/cart_items/${cartItemId}`)
+        const { data } = await api.delete(`/api/cart_items/${cartItemId}`)
 
         dispatch({ type: REMOVE_CART_ITEM_SUCCESS, payload: {cartItemId , data} })
 
@@ -45,7 +45,7 @@ export const updateCartItem = (reqData) => async (dispatch) => {
 
     try {
 
-        const { data } = await api.put(`api/cart_items/${reqData.cartItemId}`, reqData.data)
+        const { data } = await api.put(`/api/cart_items/${reqData.cartItemId}`, reqData.data)
 
         dispatch({ type: UPDATE_CART_ITEM_SUCCESS, payload: data })
         dispatch(getCart())

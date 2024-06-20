@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const app = express()
 
-const allowedOrigin = "https://e-commerce-mern-project-devesh-dighe.vercel.app/"
+const allowedOrigin = "https://e-commerce-mern-project-devesh-dighe.vercel.app"
 
 app.use(express.json())
 const corsOptions = {
