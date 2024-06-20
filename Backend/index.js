@@ -5,6 +5,13 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors(
+    {
+        origin: ['https://e-commerce-mern-project-devesh-dighe.vercel.app/'],
+        methods: ['POST', "GET", "DELETE", "PUT", "PATCH"],
+        credentials: true
+    }
+))
 app.use(cors())
 
 app.get('/', (req, res) => {
