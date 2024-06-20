@@ -12,7 +12,7 @@ app.use(cors(
         credentials: true
     }
 ))
-app.use(cors())
+// app.use(cors())
 
 app.get('/', (req, res) => {
     return res.status(200).json({ message: 'welcome to ecommerce api', status: true })
