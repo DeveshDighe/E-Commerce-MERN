@@ -1,16 +1,26 @@
 const express = require('express')
 const cors = require('cors')
-
+const  mongoose  = require("mongoose");
+const dotenv = require('dotenv')
+const cron = require('node-cron')
 
 const app = express()
-
+dotenv.config()
 app.use(express.json())
-app.use(cors())
+app.use(cors()) 
 
 app.get('/', (req, res) => {
     return res.status(200).json({ message: 'welcome to ecommerce api', status: true })
 })
 
+// cron.schedule('*/10 * * * *', () => {
+    app.get('/ser', (req, res) => {
+        // console.log('haha welcome to ecommerce apiii');
+        return res.status(200).json({ message: 'welcome to ecommerce apiiiiii', status: true })
+    })
+
+    console.log('haha connnnn');
+// });
 const authRouters = require('./src/routes/auth.routes.js')
 app.use('/auth', authRouters)
 
@@ -40,5 +50,19 @@ app.use('/api/reviews', reviewRouter)
 
 const ratingRouter = require('./src/routes/rating.routes.js')
 app.use('/api/ratings', ratingRouter)
+
+
+const PORT = 8000;
+
+app.listen(PORT, async () => {
+    console.log('E-Commerce api listening on Port : ', PORT);
+})
+
+mongoose.connect(process.env.mongodbUrl).then(()=>{
+    console.log('DB connected');
+}).catch((err)=>{
+    console.log("Error in db connection : ", err);
+})
+
 
 module.exports = app;
