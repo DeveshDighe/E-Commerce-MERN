@@ -2,8 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const  mongoose  = require("mongoose");
 const dotenv = require('dotenv')
-const cron = require('node-cron')
-
+const cron = require('node-cron');
 const app = express()
 dotenv.config()
 app.use(express.json())
@@ -13,14 +12,23 @@ app.get('/', (req, res) => {
     return res.status(200).json({ message: 'welcome to ecommerce api', status: true })
 })
 
-// cron.schedule('*/10 * * * *', () => {
+
     app.get('/ser', (req, res) => {
-        // console.log('haha welcome to ecommerce apiii');
         return res.status(200).json({ message: 'welcome to ecommerce apiiiiii', status: true })
     })
 
-    console.log('haha connnnn');
-// });
+
+cron.schedule('*/1 * * * *', async () => {
+    try {
+      const response = await axios.get(`${process.env.BACK_SERVER_URL}ser`);
+      console.log('Request successful:', response.data);
+    } catch (error) {
+      console.error('Error making request:', error.message);
+    }
+  }, {
+    timezone: 'Asia/Kolkata'
+  });
+
 const authRouters = require('./src/routes/auth.routes.js')
 app.use('/auth', authRouters)
 
@@ -48,7 +56,8 @@ app.use('/api/admin/orders', adminOrderRouter)
 const reviewRouter = require('./src/routes/review.routes.js')
 app.use('/api/reviews', reviewRouter)
 
-const ratingRouter = require('./src/routes/rating.routes.js')
+const ratingRouter = require('./src/routes/rating.routes.js');
+const { default: axios } = require('axios');
 app.use('/api/ratings', ratingRouter)
 
 
