@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     })
 
 
-cron.schedule('*/1 * * * *', async () => {
+cron.schedule('*/10 * * * *', async () => {
     try {
       const response = await axios.get(`${process.env.BACK_SERVER_URL}ser`);
       console.log('Request successful:', response.data);
