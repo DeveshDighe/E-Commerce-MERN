@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_BASE_URL = 'https://e-commerce-mern-project-apis.onrender.com/';
+export const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 const jwt = localStorage.getItem('JwT');
 
