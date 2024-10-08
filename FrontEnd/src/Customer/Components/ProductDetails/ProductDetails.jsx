@@ -158,7 +158,7 @@ export default function ProductDetails() {
 
 
     const product = {
-        name: singleProductData?.category?.name.slice(0,1).toUpperCase() + singleProductData?.category?.name.slice(1,singleProductData?.category?.name.length) ?? 'Basic Tee 6-Pack',
+        name: singleProductData?.category?.name?.slice(0,1).toUpperCase() + singleProductData?.category?.name?.slice(1,singleProductData?.category?.name.length) ?? 'Basic Tee 6-Pack',
         price: '$192',
         href: '#',
         breadcrumbs: [

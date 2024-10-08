@@ -36,7 +36,7 @@ export default function UserDropDown({ handleOpen, setopenAuthModel, openAuthMod
         <Menu as="div" className="relative inline-block text-left">
             <div>
                 <Menu.Button className="inline-flex w-8 h-8 justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 items-center">
-                    {auth.user ? auth.user.firstName.slice(0, 1).toUpperCase() : 'U'}
+                    {auth.user ? auth?.user?.firstName?.slice(0, 1).toUpperCase() : 'U'}
                     <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
                 </Menu.Button>
             </div>
