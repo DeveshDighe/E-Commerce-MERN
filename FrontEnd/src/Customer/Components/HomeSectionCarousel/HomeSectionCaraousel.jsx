@@ -144,7 +144,7 @@ const HomeSectionCaraousel = ({ ProdsData, sectionName }) => {
 
     const syncActiveIndex = ({ t }) => setActiveIndex(t)
 
-    const items = ProdsData.slice(0, 30).map((item) => <HomeSectionCard Data={item} />)   //The array contains 5 elements, each corresponding to a HomeSectionCard.
+    const items = ProdsData?.slice(0, 30).map((item) => <HomeSectionCard Data={item} />)   //The array contains 5 elements, each corresponding to a HomeSectionCard.
     return (
         <div className=' border rounded-md '>
             <h2 className=' text-2xl ml-2 font-extrabold font-noto text-gray-800 pt-5'>{sectionName}</h2>

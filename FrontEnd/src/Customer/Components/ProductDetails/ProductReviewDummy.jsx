@@ -30,7 +30,7 @@ const ProductReviewCard = ({ revData, ratings }) => {
                 <Grid item xs={12} sm={1} sx={{ textAlign: 'center' }}>
                     <Box>
                         <Avatar className=' text-white ' sx={{ width: 56, height: 56, bgcolor: '#9155fd', mx: 'auto' }}>
-                            {user.firstName.slice(0, 1).toUpperCase()}
+                            {user?.firstName?.slice(0, 1).toUpperCase()}
                         </Avatar>
                     </Box>
                 </Grid>
