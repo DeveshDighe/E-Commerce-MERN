@@ -18,16 +18,16 @@ app.get('/', (req, res) => {
     })
 
 
-// cron.schedule('*/10 * * * *', async () => {
-//     try {
-//       const response = await axios.get(`${process.env.BACK_SERVER_URL}`);
-//       console.log('Request successful:', response.data);
-//     } catch (error) {
-//       console.error('Error making request:', error.message);
-//     }
-//   }, {
-//     timezone: 'Asia/Kolkata'
-//   });
+cron.schedule('*/10 * * * *', async () => {
+    try {
+      const response = await axios.get(`${process.env.BACK_SERVER_URL}`);
+      console.log('Request successful:', response.data);
+    } catch (error) {
+      console.error('Error making request:', error.message);
+    }
+  }, {
+    timezone: 'Asia/Kolkata'
+  });
 
 const authRouters = require('./src/routes/auth.routes.js')
 app.use('/auth', authRouters)
